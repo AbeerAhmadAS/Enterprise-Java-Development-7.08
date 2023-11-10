@@ -1,0 +1,11 @@
+<h1> Movie Characters  List</h1>
+<div class="container">
+    <div *ngFor="let character of characterList; let i = index">
+        <div class="part1"><p  class="character" >{{character.name}}<button (click)="showDetails(i)" ><img width="25" height="25" src="https://img.icons8.com/color/48/fine-print.png" alt="fine-print"/></button> </p></div>
+    </div>
+    <div *ngFor="let character of characterList; let i = index">
+        <div *ngIf="i === selectedcharacter" class="part2">
+            <app-character-item [characterLists]="character" (deleteCharacterEvent)="deleteCharacter(i)" ></app-character-item>
+        </div>
+    </div>
+</div>
